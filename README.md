@@ -20,19 +20,19 @@ A preliminary qualifying round of the competition will take place across two wee
   - [Teams](#teams)
   - [Communication](#communication)
   - [AI Usage](#ai-usage)
-- [Preliminary Phase](#preliminary-phase)
+- [Qualifying Phase](#qualifying-phase)
 - [Finals @ CSAW](#finals)
 - [Getting Started](#getting-started)
 - [Hackster Board](#hackster-board)
 
 ## General Guidelines
 ### Timeline
-- 18 September: Preliminary Phase Launch
-- 02 October: Preliminary Phase Submission Deadline
+- 18 September: Qualifying Phase Launch
+- 02 October: Qualifying Phase Submission Deadline
 - 04 October: Finalists Notified
 - 12 November: Final Challenge Released @ CSAW
-- 14 November: Final Challenge Deadline & Presentations @ CSAW
-- 15 November: Winners Announced @ CSAW
+- 13 November: Final Challenge Deadline & Presentations @ CSAW
+- 14 November: Winners Announced @ CSAW
 
 *Note: There is no registration deadline. Teams can register and submit up until the preliminary phase submission deadline.*
 
@@ -47,11 +47,11 @@ The majority of communications about this and future competitions will be done t
 ### AI Usage
 This competition relies on significant use of generative AI. As such, detailed logs need to be kept and included in all submissions, detailing every interaction with AI. **If a submission is made without logs or the logs are missing key information, the submission may be disqualified.**
 
-## Preliminary Phase
-Details on the first phase of the competition will be released on 18 September.
+## Qualifying Phase
+Details on the qualifying phase of the competition can be found in [the qualifying phase directory.](./qualifier/)
 
 ## Finals
-Finals will take place at NYU during CSAW from November 12 - 14. Details on this phase of the competition will be released once finalists are selected.
+Finals will take place at NYU during CSAW from November 12 - 14. Initial details on this phase of the competition can be found in [the finals directory.](./finals/)
 
 ## Getting Started
 We recommend the [Yosys OSS CAD Suite](https://github.com/YosysHQ/oss-cad-suite-build) for use with the Hackster board. It contains all of the tools that teams should need to get started such as:
