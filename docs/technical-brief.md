@@ -1,7 +1,7 @@
 # Technical brief — CSAW 2026 AI Hardware Attack Challenge (qualifier)
 
 **Author:** Vaughn (NYU Design Project, solo)
-**Date:** 2026-11-05
+**Date:** 2026-11-05 (presented 2026-11-06)
 **AI collaborators:** GPT-6.1 (Codex desktop; recovery + baseline probe) → Claude Opus 4.8 (Claude Code; baseline hardening, Trojan, exploit, evidence, slides)
 
 All hardware/RTL and exploit code in this submission is **AI-generated**. The
@@ -21,6 +21,9 @@ complete AI interaction logs are in `ai/` (see §8).
 6. Demonstrated ordinary behavior, trigger activation, near misses, reset
    dis-arming, one-result scope, and recovery, with waveforms and a resource
    comparison, all from one reproducible script.
+7. Demonstrated the whole attack on the **physical Hackster board**: backed up
+   the FPGA flash, flashed the original and then our Trojan bitstream, reproduced
+   the exploit on real silicon, and restored the clean image (see §7b).
 
 ## 2. Supplied vs. independent (important for scoring honesty)
 
@@ -144,6 +147,31 @@ diff reveals the added trigger state. A known-answer test on the exact trigger
 word would also expose it. Simulation coverage here is extensive but **not** a
 universal-equivalence proof.
 
+## 7b. On-board hardware demonstration (real Hackster board)
+
+The attack was validated end-to-end on the physical board, not only in
+simulation. Devices: AppMicro `/dev/cu.usbmodem21301` (RP2040, MicroPython
+1.27.0), FPGA programmer `/dev/cu.usbmodem21401` (vendor `hackster-programmer`,
+commit `e664a43`).
+
+| Step | Observation |
+| --- | --- |
+| AppMicro hello | MicroPython 1.27.0 on RP2040 — confirmed |
+| Supplied test on as-found FPGA | **SPI error** — FPGA was unprogrammed |
+| 256 KiB flash read-back (backup) | **100% 0xFF** — flash was blank (sha `3b874d3b…`) |
+| Flash original `ice40_bitstream.bin` | "Verification successful", no data mismatch |
+| Supplied test on original | SPI pass; encrypt `9cd84392`; decrypt `59c359c3` — matches sim |
+| Build + flash Trojan bitstream | yosys→nextpnr(up5k/sg48)→icepack; Fmax 21.86 MHz (SCK ≤1 MHz); clean write |
+| Supplied test on Trojan image | still passes (dormant on ordinary traffic) |
+| On-board exploit (`scripts/hw_trojan_exploit.py`) | un-armed SEQ2 → `4f92e7f9`; armed SEQ0→SEQ1→SEQ2 → **`4f92e7f8`**; recovers after |
+| Restore original image | "Verification successful"; supplied test passes again |
+
+The board was left running the clean original image (not the Trojan). The
+Trojan bitstream is reproducible via `scripts/build_bitstream.sh`; logs are in
+`build/reports/hw-*.log`. Note (per vendor caveat) the programmer can print a
+success line even after a `Data mismatch`, so each write was scanned for
+mismatch/error lines — none were present.
+
 ## 8. Reproduce everything
 
 ```sh
@@ -155,6 +183,14 @@ Runs recovery → Python model self-test → baseline self-check → netlist/cle
 equivalence → Trojan exploit → synthesis diff → waveforms, and exits non-zero on
 any self-check failure. Evidence lands in `build/reports/` and
 `presentation/figures/`.
+
+For the real-board demo (board connected), build the bitstreams and follow the
+printed flash/exploit commands:
+
+```sh
+source /Users/bon/Tools/oss-cad-suite/environment
+bash scripts/build_bitstream.sh    # builds build/hw/crypto_core_{clean,trojan}.bin
+```
 
 ## 9. AI provenance
 

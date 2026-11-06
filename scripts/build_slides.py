@@ -126,19 +126,19 @@ def build():
 
     # Slide: goal + progress
     b, _ = bullets_svg([
-        ("Goal: recover the supplied FPGA crypto IP, verify it, then have AI insert and exploit one hardware Trojan — all in simulation.", C["blue"]),
-        ("Done: bitstream recovered; cipher reconstructed; self-checking baseline passes 127/127.", C["green"]),
-        ("Done: AI-generated Trojan + exploit; 140/140 checks; waveforms + resource diff captured.", C["green"]),
-        ("One reproducible command regenerates every result.", C["amber"]),
-        ("Tomorrow's scope = simulation; physical board is optional and kept secure for last.", C["muted"]),
+        ("Goal: recover the supplied FPGA crypto IP, verify it, then have AI insert and exploit one hardware Trojan.", C["blue"]),
+        ("Bitstream recovered; cipher reconstructed; self-checking baseline passes 127/127.", C["green"]),
+        ("AI-generated Trojan + exploit: 140/140 simulation checks; waveforms + resource diff captured.", C["green"]),
+        ("Confirmed end-to-end on the real Hackster board: dormant in normal use, payload fires on cue.", C["green"]),
+        ("One reproducible command regenerates every simulation result.", C["amber"]),
     ], 64, 182, W-128)
-    slides.append(("p1", frame(1, "WHERE WE ARE", "Project goal and current progress", b, "0:40")))
+    slides.append(("p1", frame(1, "FINDINGS OVERVIEW", "Project goal and what we found", b, "0:40")))
     SPK[1] = ("Our IP core is a small crypto accelerator delivered only as an FPGA bitstream. "
               "The project is a three-part arc: recover an inspectable circuit, prove we understand its normal behavior, "
-              "then use AI to insert and demonstrate a hardware Trojan. As of tonight everything through the Trojan and its "
-              "exploit is done and self-checking, with 127 baseline checks and 140 Trojan checks all passing, and a single "
-              "script reproduces it. Tomorrow's requirement is the simulation story; the physical board is a bonus I'll only "
-              "attempt once the slides and evidence are safe.")
+              "then use AI to insert and demonstrate a hardware Trojan. All three are done. The baseline passes 127 "
+              "self-checks, the Trojan and its exploit pass 140, and a single script reproduces every simulation result. "
+              "We also took the attack all the way onto the physical Hackster board: it behaves exactly like the clean "
+              "core until a secret input sequence fires the payload. These slides walk through those findings.")
 
     # Slide: architecture + ordinary transaction
     b, _ = bullets_svg([
@@ -229,36 +229,40 @@ def build():
     # Slide: evidence + limitations
     b, _ = bullets_svg([
         ("Dormant: 120 ordinary vectors bit-identical to the golden core. Fires: 0x4f92e7f9 → 0x4f92e7f8 (bit 0).", C["green"]),
-        ("Near misses (wrong final/middle/order), reset dis-arm, one-result scope, re-arm: all correct. 140/140.", C["green"]),
-        ("Stealth is MEASURED: synth diff +96 cells (+3.4%), +34 flops — not area-invisible; KATs on the trigger would expose it.", C["amber"]),
+        ("On the real Hackster board: ordinary test still passes; armed SEQ2 returns 4f92e7f8; recovers after.", C["green"]),
+        ("Near misses, reset dis-arm, one-result scope, re-arm: all correct — 140/140 in sim.", C["green"]),
+        ("Stealth is MEASURED: +96 cells (+3.4%), +34 flops — not area-invisible; a known-answer test exposes it.", C["amber"]),
         ("Coverage is extensive but not a universal-equivalence proof (seeds + counts recorded).", C["muted"]),
     ], 64, 182, 600)
     fig = embed_figure(FIG / "wave_trojan.svg", 704, 196, 512, 300)
-    slides.append(("p7", frame(7, "EVIDENCE", "Simulation evidence & measured limitations", b + fig, "1:00")))
+    slides.append(("p7", frame(7, "EVIDENCE", "Simulation and on-board evidence", b + fig, "1:00")))
     SPK[7] = ("Here's the proof. On 120 ordinary transactions the Trojan core is bit-identical to the clean golden core — fully "
               "dormant. When the secret sequence completes, the output changes by exactly one bit: the waveform on the right shows "
               "the golden and Trojan serial outputs agreeing until the very last bit, which flips. Every near-miss case — wrong "
               "final word, wrong middle word, wrong order, reset in the middle — correctly suppresses the payload, and it re-arms "
-              "and fires again cleanly. That's 140 checks, zero failures. Crucially I measured stealth instead of assuming it: "
-              "synthesis shows the Trojan adds about three-and-a-half percent more cells, so an area diff or a known-answer test on "
-              "the trigger word would catch it. Simulation is thorough but not a universal proof, and I record seeds and counts.")
+              "and fires again cleanly. That's 140 checks, zero failures. And this isn't only simulation: we synthesized the Trojan "
+              "to a real bitstream, flashed it to the Hackster board, and the ordinary encrypt/decrypt test still passed while our "
+              "exploit sent the three-word sequence and read back the corrupted value 4f92e7f8 on real silicon, recovering right "
+              "after. Crucially I measured stealth instead of assuming it: the Trojan adds about three-and-a-half percent more "
+              "cells, so an area diff or a known-answer test would catch it. Simulation is thorough but not a universal proof.")
 
     # Slide: labor + next milestone
     b, _ = bullets_svg([
         ("Solo project. Human: requirements, scope, board, running/reviewing/accepting all code, this talk.", C["blue"]),
         ("AI collaborators do the hardware code: GPT-6.1 (recovery + first probe), Claude Opus 4.8 (baseline, Trojan, exploit, slides).", C["text"]),
         ("All hardware/exploit code is AI-generated; full prompts, code, and test feedback are kept in ai/.", C["green"]),
-        ("Next: optional on-board demo (confirm AppMicro first), then the finals' physical challenges.", C["amber"]),
+        ("Already demonstrated on the real Hackster board; next: the finals' physical challenges.", C["amber"]),
         ("Deliverables on GitHub: RTL, testbenches, AI logs, technical brief, this deck + PDF.", C["muted"]),
     ], 64, 182, W-128)
-    slides.append(("p8", frame(8, "WRAP-UP", "Solo responsibilities & next milestone", b, "0:45")))
+    slides.append(("p8", frame(8, "WRAP-UP", "Solo responsibilities & next steps", b, "0:45")))
     SPK[8] = ("Division of labor: I work solo, so I own the requirements, scope decisions, the board, and running, reviewing and "
               "accepting every piece of generated code — and giving this talk. The hardware itself is written by my AI "
               "collaborators: GPT-6.1 handled recovery and the first probe, and Claude Opus did the baseline hardening, the Trojan, "
               "the exploit, and these slides. Per the rules, all hardware and exploit code is AI-generated and I keep the full "
-              "prompts, generated code, and test feedback in the repo. Next milestone is an optional on-board demonstration once I "
-              "confirm the MicroPython side, and then the physical finals challenges. Everything — RTL, testbenches, AI logs, the "
-              "technical brief, and this deck — goes to my GitHub fork.")
+              "prompts, generated code, and test feedback in the repo. We already took it onto the real board — confirmed AppMicro, "
+              "backed up and flashed the FPGA, reproduced the exploit on silicon, and restored the clean image — so the next "
+              "milestone is the finals' physical challenges. Everything — RTL, testbenches, AI logs, the technical brief, and this "
+              "deck — goes to my GitHub fork.")
 
     # write slide svgs
     paths = []

@@ -2,21 +2,23 @@
 <rect width="1280" height="720" fill="#0f1724"/>
 <rect x="0" y="0" width="12" height="720" fill="#4f8cff"/>
 <text x="64" y="62" font-size="18" fill="#4f8cff" letter-spacing="2">EVIDENCE</text>
-<text x="64" y="112" font-size="40" font-weight="bold" fill="#e8eefc">Simulation evidence &amp; measured limitations</text>
+<text x="64" y="112" font-size="40" font-weight="bold" fill="#e8eefc">Simulation and on-board evidence</text>
 <line x1="64" y1="134" x2="1224" y2="134" stroke="#2a3a5c" stroke-width="1.5"/>
 <circle cx="70" cy="174" r="4" fill="#34d399"/>
 <text x="86" y="182" font-size="22" fill="#e8eefc">Dormant: 120 ordinary vectors bit-identical to the</text>
 <text x="86" y="215" font-size="22" fill="#e8eefc">golden core. Fires: 0x4f92e7f9 → 0x4f92e7f8 (bit 0).</text>
 <circle cx="70" cy="253" r="4" fill="#34d399"/>
-<text x="86" y="261" font-size="22" fill="#e8eefc">Near misses (wrong final/middle/order), reset dis-arm,</text>
-<text x="86" y="294" font-size="22" fill="#e8eefc">one-result scope, re-arm: all correct. 140/140.</text>
-<circle cx="70" cy="332" r="4" fill="#fbbf24"/>
-<text x="86" y="340" font-size="22" fill="#e8eefc">Stealth is MEASURED: synth diff +96 cells (+3.4%), +34</text>
-<text x="86" y="373" font-size="22" fill="#e8eefc">flops — not area-invisible; KATs on the trigger would</text>
-<text x="86" y="406" font-size="22" fill="#e8eefc">expose it.</text>
-<circle cx="70" cy="444" r="4" fill="#9fb0cc"/>
-<text x="86" y="452" font-size="22" fill="#e8eefc">Coverage is extensive but not a universal-equivalence</text>
-<text x="86" y="485" font-size="22" fill="#e8eefc">proof (seeds + counts recorded).</text><rect x="704" y="196" width="512" height="300" rx="10" fill="#ffffff"/><g transform="translate(704.0,264.8) scale(0.5447)">
+<text x="86" y="261" font-size="22" fill="#e8eefc">On the real Hackster board: ordinary test still</text>
+<text x="86" y="294" font-size="22" fill="#e8eefc">passes; armed SEQ2 returns 4f92e7f8; recovers after.</text>
+<circle cx="70" cy="332" r="4" fill="#34d399"/>
+<text x="86" y="340" font-size="22" fill="#e8eefc">Near misses, reset dis-arm, one-result scope, re-arm:</text>
+<text x="86" y="373" font-size="22" fill="#e8eefc">all correct — 140/140 in sim.</text>
+<circle cx="70" cy="411" r="4" fill="#fbbf24"/>
+<text x="86" y="419" font-size="22" fill="#e8eefc">Stealth is MEASURED: +96 cells (+3.4%), +34 flops —</text>
+<text x="86" y="452" font-size="22" fill="#e8eefc">not area-invisible; a known-answer test exposes it.</text>
+<circle cx="70" cy="490" r="4" fill="#9fb0cc"/>
+<text x="86" y="498" font-size="22" fill="#e8eefc">Coverage is extensive but not a universal-equivalence</text>
+<text x="86" y="531" font-size="22" fill="#e8eefc">proof (seeds + counts recorded).</text><rect x="704" y="196" width="512" height="300" rx="10" fill="#ffffff"/><g transform="translate(704.0,264.8) scale(0.5447)">
 <rect width="940" height="298" fill="#ffffff"/>
 <text x="150" y="34" font-size="20" font-weight="bold" fill="#1a1a2e">Payload: golden vs Trojan serial output differ by one bit (LSB)</text>
 <line x1="150.0" y1="58" x2="150.0" y2="248" stroke="#e6e6ef" stroke-width="1"/>

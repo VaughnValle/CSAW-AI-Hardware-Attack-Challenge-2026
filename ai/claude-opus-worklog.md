@@ -87,6 +87,26 @@ correct sequence fires (`0x4f92e7f9 → 0x4f92e7f8`); near misses/wrong order/
 reset all suppress the payload; re-arm fires again. Synthesis diff: +96 cells
 (+3.4%) — stealth measured, not assumed.
 
+## Cycle 4 — On-board hardware demonstration (passed)
+
+**Intent:** take the simulated attack onto the physical Hackster board.
+
+**Generated:** `scripts/build_bitstream.sh` (yosys→nextpnr up5k/sg48→icepack from
+the clean and Trojan RTL, using `constraints/hackster.pcf`) and
+`scripts/hw_trojan_exploit.py` (AI-generated MicroPython host exploit for
+AppMicro, adapting the supplied script's SPI sequence).
+
+**Diagnosis from the board:** the as-found FPGA failed the supplied SPI test; a
+256 KiB flash read-back was 100% `0xFF`, i.e. the FPGA was unprogrammed. So the
+board needed flashing (and nothing was lost — backup first regardless).
+
+**Test feedback (PASS):** after flashing the original image the supplied test
+reproduced `9cd84392`/`59c359c3` on silicon (matching sim). After flashing the
+Trojan bitstream, the ordinary test still passed (dormant) and the exploit
+reproduced the payload on real hardware: un-armed SEQ2 → `4f92e7f9`, armed
+sequence → `4f92e7f8`, recovering after. The clean original image was reflashed
+to leave the board un-Trojaned. Logs: `build/reports/hw-*.log`.
+
 ---
 
 ## Guardrail experience (reported honestly — no invented bypass or refusal)

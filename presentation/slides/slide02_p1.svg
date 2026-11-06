@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica,Arial,sans-serif">
 <rect width="1280" height="720" fill="#0f1724"/>
 <rect x="0" y="0" width="12" height="720" fill="#4f8cff"/>
-<text x="64" y="62" font-size="18" fill="#4f8cff" letter-spacing="2">WHERE WE ARE</text>
-<text x="64" y="112" font-size="40" font-weight="bold" fill="#e8eefc">Project goal and current progress</text>
+<text x="64" y="62" font-size="18" fill="#4f8cff" letter-spacing="2">FINDINGS OVERVIEW</text>
+<text x="64" y="112" font-size="40" font-weight="bold" fill="#e8eefc">Project goal and what we found</text>
 <line x1="64" y1="134" x2="1224" y2="134" stroke="#2a3a5c" stroke-width="1.5"/>
 <circle cx="70" cy="174" r="4" fill="#4f8cff"/>
 <text x="86" y="182" font-size="22" fill="#e8eefc">Goal: recover the supplied FPGA crypto IP, verify it, then have AI insert and exploit one hardware</text>
-<text x="86" y="215" font-size="22" fill="#e8eefc">Trojan — all in simulation.</text>
+<text x="86" y="215" font-size="22" fill="#e8eefc">Trojan.</text>
 <circle cx="70" cy="253" r="4" fill="#34d399"/>
-<text x="86" y="261" font-size="22" fill="#e8eefc">Done: bitstream recovered; cipher reconstructed; self-checking baseline passes 127/127.</text>
+<text x="86" y="261" font-size="22" fill="#e8eefc">Bitstream recovered; cipher reconstructed; self-checking baseline passes 127/127.</text>
 <circle cx="70" cy="299" r="4" fill="#34d399"/>
-<text x="86" y="307" font-size="22" fill="#e8eefc">Done: AI-generated Trojan + exploit; 140/140 checks; waveforms + resource diff captured.</text>
-<circle cx="70" cy="345" r="4" fill="#fbbf24"/>
-<text x="86" y="353" font-size="22" fill="#e8eefc">One reproducible command regenerates every result.</text>
-<circle cx="70" cy="391" r="4" fill="#9fb0cc"/>
-<text x="86" y="399" font-size="22" fill="#e8eefc">Tomorrow&#x27;s scope = simulation; physical board is optional and kept secure for last.</text>
+<text x="86" y="307" font-size="22" fill="#e8eefc">AI-generated Trojan + exploit: 140/140 simulation checks; waveforms + resource diff captured.</text>
+<circle cx="70" cy="345" r="4" fill="#34d399"/>
+<text x="86" y="353" font-size="22" fill="#e8eefc">Confirmed end-to-end on the real Hackster board: dormant in normal use, payload fires on cue.</text>
+<circle cx="70" cy="391" r="4" fill="#fbbf24"/>
+<text x="86" y="399" font-size="22" fill="#e8eefc">One reproducible command regenerates every simulation result.</text>
 <text x="1224" y="692" font-size="15" text-anchor="end" fill="#9fb0cc">CSAW 2026 AI Hardware Attack Challenge — NYU Design Project</text>
 <text x="64" y="692" font-size="15" fill="#9fb0cc">1/8 · 0:40</text>
 </svg>
