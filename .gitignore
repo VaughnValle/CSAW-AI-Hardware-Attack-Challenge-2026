@@ -1,2 +1,8 @@
 */src
 */*/src/
+
+# Local environments and generated simulation artifacts
+/.venv/
+/build/
+__pycache__/
+.DS_Store

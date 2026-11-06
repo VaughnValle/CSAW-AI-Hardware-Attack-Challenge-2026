@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica,Arial,sans-serif">
+<rect width="1280" height="720" fill="#0f1724"/>
+<rect x="0" y="0" width="12" height="720" fill="#4f8cff"/>
+<text x="64" y="62" font-size="18" fill="#4f8cff" letter-spacing="2">EVIDENCE</text>
+<text x="64" y="112" font-size="40" font-weight="bold" fill="#e8eefc">Simulation evidence &amp; measured limitations</text>
+<line x1="64" y1="134" x2="1224" y2="134" stroke="#2a3a5c" stroke-width="1.5"/>
+<circle cx="70" cy="174" r="4" fill="#34d399"/>
+<text x="86" y="182" font-size="22" fill="#e8eefc">Dormant: 120 ordinary vectors bit-identical to the</text>
+<text x="86" y="215" font-size="22" fill="#e8eefc">golden core. Fires: 0x4f92e7f9 → 0x4f92e7f8 (bit 0).</text>
+<circle cx="70" cy="253" r="4" fill="#34d399"/>
+<text x="86" y="261" font-size="22" fill="#e8eefc">Near misses (wrong final/middle/order), reset dis-arm,</text>
+<text x="86" y="294" font-size="22" fill="#e8eefc">one-result scope, re-arm: all correct. 140/140.</text>
+<circle cx="70" cy="332" r="4" fill="#fbbf24"/>
+<text x="86" y="340" font-size="22" fill="#e8eefc">Stealth is MEASURED: synth diff +96 cells (+3.4%), +34</text>
+<text x="86" y="373" font-size="22" fill="#e8eefc">flops — not area-invisible; KATs on the trigger would</text>
+<text x="86" y="406" font-size="22" fill="#e8eefc">expose it.</text>
+<circle cx="70" cy="444" r="4" fill="#9fb0cc"/>
+<text x="86" y="452" font-size="22" fill="#e8eefc">Coverage is extensive but not a universal-equivalence</text>
+<text x="86" y="485" font-size="22" fill="#e8eefc">proof (seeds + counts recorded).</text><rect x="704" y="196" width="512" height="300" rx="10" fill="#ffffff"/><g transform="translate(704.0,264.8) scale(0.5447)">
+<rect width="940" height="298" fill="#ffffff"/>
+<text x="150" y="34" font-size="20" font-weight="bold" fill="#1a1a2e">Payload: golden vs Trojan serial output differ by one bit (LSB)</text>
+<line x1="150.0" y1="58" x2="150.0" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="370.0" y1="58" x2="370.0" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="590.0" y1="58" x2="590.0" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="810.0" y1="58" x2="810.0" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<text x="136" y="90" font-size="15" text-anchor="end" fill="#333">SCK</text>
+<line x1="150" y1="96" x2="920" y2="96" stroke="#f0f0f0" stroke-width="1"/>
+<path d="M 150.0 74.0 L 260.0 74.0 L 260.0 96.0 L 370.0 96.0 L 370.0 74.0 L 480.0 74.0 L 480.0 96.0 L 590.0 96.0 L 590.0 74.0 L 700.0 74.0 L 700.0 96.0 L 810.0 96.0 L 810.0 74.0 L 920.0 74.0 L 920.0 96.0 L 920.0 96.0" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<text x="136" y="136" font-size="15" text-anchor="end" fill="#333">NORM_CS_N</text>
+<line x1="150" y1="142" x2="920" y2="142" stroke="#f0f0f0" stroke-width="1"/>
+<path d="M 150.0 142.0 L 920.0 142.0 L 920.0 120.0 L 920.0 120.0" fill="none" stroke="#64748b" stroke-width="2.2"/>
+<text x="136" y="182" font-size="15" text-anchor="end" fill="#333">MISO golden</text>
+<line x1="150" y1="188" x2="920" y2="188" stroke="#f0f0f0" stroke-width="1"/>
+<path d="M 150.0 166.0 L 370.0 166.0 L 370.0 188.0 L 810.0 188.0 L 810.0 166.0 L 920.0 166.0" fill="none" stroke="#16a34a" stroke-width="2.2"/>
+<text x="136" y="228" font-size="15" text-anchor="end" fill="#333">MISO trojan</text>
+<line x1="150" y1="234" x2="920" y2="234" stroke="#f0f0f0" stroke-width="1"/>
+<path d="M 150.0 212.0 L 370.0 212.0 L 370.0 234.0 L 920.0 234.0" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<line x1="150" y1="256" x2="920" y2="256" stroke="#888" stroke-width="1"/>
+<line x1="150.0" y1="256" x2="150.0" y2="261" stroke="#888"/>
+<text x="150.0" y="276" font-size="12" text-anchor="middle" fill="#666">258.5µs</text>
+<line x1="304.0" y1="256" x2="304.0" y2="261" stroke="#888"/>
+<text x="304.0" y="276" font-size="12" text-anchor="middle" fill="#666">259.2µs</text>
+<line x1="458.0" y1="256" x2="458.0" y2="261" stroke="#888"/>
+<text x="458.0" y="276" font-size="12" text-anchor="middle" fill="#666">259.9µs</text>
+<line x1="612.0" y1="256" x2="612.0" y2="261" stroke="#888"/>
+<text x="612.0" y="276" font-size="12" text-anchor="middle" fill="#666">260.6µs</text>
+<line x1="766.0" y1="256" x2="766.0" y2="261" stroke="#888"/>
+<text x="766.0" y="276" font-size="12" text-anchor="middle" fill="#666">261.3µs</text>
+<line x1="920.0" y1="256" x2="920.0" y2="261" stroke="#888"/>
+<text x="920.0" y="276" font-size="12" text-anchor="middle" fill="#666">262.0µs</text>
+</g>
+<text x="1224" y="692" font-size="15" text-anchor="end" fill="#9fb0cc">CSAW 2026 AI Hardware Attack Challenge — NYU Design Project</text>
+<text x="64" y="692" font-size="15" fill="#9fb0cc">7/8 · 1:00</text>
+</svg>

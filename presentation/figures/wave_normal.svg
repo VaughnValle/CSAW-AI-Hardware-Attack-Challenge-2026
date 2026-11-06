@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="298" viewBox="0 0 940 298" font-family="Menlo,Consolas,monospace">
+<rect width="940" height="298" fill="#ffffff"/>
+<text x="150" y="34" font-size="20" font-weight="bold" fill="#1a1a2e">Ordinary transaction: BUSY falls at edge 4, result loads at edge 5</text>
+<line x1="188.5" y1="58" x2="188.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="265.5" y1="58" x2="265.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="342.5" y1="58" x2="342.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="419.5" y1="58" x2="419.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="496.5" y1="58" x2="496.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="573.5" y1="58" x2="573.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="650.5" y1="58" x2="650.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="727.5" y1="58" x2="727.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="804.5" y1="58" x2="804.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="881.5" y1="58" x2="881.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<text x="136" y="90" font-size="15" text-anchor="end" fill="#333">SCK</text>
+<line x1="150" y1="96" x2="920" y2="96" stroke="#f0f0f0" stroke-width="1"/>
+<path d="M 150.0 96.0 L 188.5 96.0 L 188.5 74.0 L 227.0 74.0 L 227.0 96.0 L 265.5 96.0 L 265.5 74.0 L 304.0 74.0 L 304.0 96.0 L 342.5 96.0 L 342.5 74.0 L 381.0 74.0 L 381.0 96.0 L 419.5 96.0 L 419.5 74.0 L 458.0 74.0 L 458.0 96.0 L 496.5 96.0 L 496.5 74.0 L 535.0 74.0 L 535.0 96.0 L 573.5 96.0 L 573.5 74.0 L 612.0 74.0 L 612.0 96.0 L 650.5 96.0 L 650.5 74.0 L 689.0 74.0 L 689.0 96.0 L 727.5 96.0 L 727.5 74.0 L 766.0 74.0 L 766.0 96.0 L 804.5 96.0 L 804.5 74.0 L 843.0 74.0 L 843.0 96.0 L 881.5 96.0 L 881.5 74.0 L 920.0 74.0 L 920.0 96.0 L 920.0 96.0" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<text x="136" y="136" font-size="15" text-anchor="end" fill="#333">NORM_CS_N</text>
+<line x1="150" y1="142" x2="920" y2="142" stroke="#f0f0f0" stroke-width="1"/>
+<path d="M 150.0 142.0 L 227.0 142.0 L 227.0 120.0 L 920.0 120.0" fill="none" stroke="#64748b" stroke-width="2.2"/>
+<text x="136" y="182" font-size="15" text-anchor="end" fill="#333">START</text>
+<line x1="150" y1="188" x2="920" y2="188" stroke="#f0f0f0" stroke-width="1"/>
+<path d="M 150.0 188.0 L 227.0 188.0 L 227.0 166.0 L 304.0 166.0 L 304.0 188.0 L 920.0 188.0" fill="none" stroke="#16a34a" stroke-width="2.2"/>
+<text x="136" y="228" font-size="15" text-anchor="end" fill="#333">BUSY (=ICE_LED)</text>
+<line x1="150" y1="234" x2="920" y2="234" stroke="#f0f0f0" stroke-width="1"/>
+<path d="M 150.0 234.0 L 227.0 234.0 L 227.0 212.0 L 496.5 212.0 L 496.5 234.0 L 920.0 234.0" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<line x1="150" y1="256" x2="920" y2="256" stroke="#888" stroke-width="1"/>
+<line x1="150.0" y1="256" x2="150.0" y2="261" stroke="#888"/>
+<text x="150.0" y="276" font-size="12" text-anchor="middle" fill="#666">34.0µs</text>
+<line x1="304.0" y1="256" x2="304.0" y2="261" stroke="#888"/>
+<text x="304.0" y="276" font-size="12" text-anchor="middle" fill="#666">36.0µs</text>
+<line x1="458.0" y1="256" x2="458.0" y2="261" stroke="#888"/>
+<text x="458.0" y="276" font-size="12" text-anchor="middle" fill="#666">38.0µs</text>
+<line x1="612.0" y1="256" x2="612.0" y2="261" stroke="#888"/>
+<text x="612.0" y="276" font-size="12" text-anchor="middle" fill="#666">40.0µs</text>
+<line x1="766.0" y1="256" x2="766.0" y2="261" stroke="#888"/>
+<text x="766.0" y="276" font-size="12" text-anchor="middle" fill="#666">42.0µs</text>
+<line x1="920.0" y1="256" x2="920.0" y2="261" stroke="#888"/>
+<text x="920.0" y="276" font-size="12" text-anchor="middle" fill="#666">44.0µs</text>
+</svg>

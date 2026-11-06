@@ -1,0 +1,9 @@
+{
+  "models_observed": [
+    "gpt-6.1-sol"
+  ],
+  "interface": "Codex desktop app, local tools",
+  "exported_records": 122,
+  "scope": "Visible user/assistant messages and tool exchanges. Excludes private reasoning and system/developer instructions.",
+  "refresh": "Run this exporter again before submission to include later work and the final response."
+}

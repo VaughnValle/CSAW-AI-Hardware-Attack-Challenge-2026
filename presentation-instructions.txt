@@ -1,0 +1,11 @@
+Time for presentation ~5-10 minutes. Sample questions to address..
+
+What have you done so far.
+How did you reverse engineer bitstream?
+How did you give this info to the LLM?
+What open tools did you use?
+What have you learnt about the bitstream including the functionality it implements?
+Describe the Trojan that you are implementing. discuss the taxonomy?
+Describe how you got around the LLM security guardrails?
+Discuss the division of labor of who is doing what in your team? 
+Upload the presentation in the GitHub repo?

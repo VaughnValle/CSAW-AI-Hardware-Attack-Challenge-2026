@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica,Arial,sans-serif">
+<rect width="1280" height="720" fill="#0f1724"/>
+<rect x="0" y="0" width="1280" height="8" fill="#4f8cff"/>
+<rect x="0" y="712" width="1280" height="8" fill="#f87171"/>
+<text x="64" y="210" font-size="20" fill="#4f8cff" letter-spacing="3">CSAW 2026 · AI HARDWARE ATTACK CHALLENGE (QUALIFIER)</text>
+<text x="64" y="300" font-size="58" font-weight="bold" fill="#e8eefc">An AI-generated hardware Trojan</text>
+<text x="64" y="366" font-size="58" font-weight="bold" fill="#e8eefc">in a recovered iCE40 crypto core</text>
+<text x="64" y="440" font-size="26" fill="#9fb0cc">Bitstream recovery → verified baseline → Trojan → simulated exploit</text>
+<text x="64" y="556" font-size="22" fill="#e8eefc">Vaughn — NYU Design Project (solo)</text>
+<text x="64" y="590" font-size="19" fill="#9fb0cc">AI collaborators: GPT-6.1 (recovery) · Claude Opus 4.8 (baseline, Trojan, exploit)</text>
+<text x="64" y="624" font-size="19" fill="#9fb0cc">Tools: OSS CAD Suite (IceStorm, Yosys, Icarus Verilog), Python</text>
+<text x="1224" y="690" font-size="16" text-anchor="end" fill="#9fb0cc">2026-11-06</text>
+</svg>

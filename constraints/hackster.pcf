@@ -1,0 +1,12 @@
+# Hackster sg48 pin map, adapted from Hammond Pearce's vendor SPI example.
+# Source: https://github.com/kiwih/hackster-programmer/blob/main/examples/spi_aes/spi_aes.pcf
+# The challenge names the mode pin ENC_DEC rather than ENCRYPT_NDECRYPT.
+set_io SCK 36
+set_io RST_N 34
+set_io MOSI 32
+set_io MISO 31
+set_io NORM_CS_N 28
+set_io START 27
+set_io ENC_DEC 25
+set_io BUSY 23
+set_io ICE_LED 38

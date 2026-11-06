@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica,Arial,sans-serif">
+<rect width="1280" height="720" fill="#0f1724"/>
+<rect x="0" y="0" width="12" height="720" fill="#4f8cff"/>
+<text x="64" y="62" font-size="18" fill="#4f8cff" letter-spacing="2">REVERSE ENGINEERING</text>
+<text x="64" y="112" font-size="40" font-weight="bold" fill="#e8eefc">Bitstream recovery and open tools</text>
+<line x1="64" y1="134" x2="1224" y2="134" stroke="#2a3a5c" stroke-width="1.5"/>
+<circle cx="70" cy="174" r="4" fill="#4f8cff"/>
+<text x="86" y="182" font-size="22" fill="#e8eefc">iceunpack bitstream → .asc (device 5k); icebox_vlog → structural Verilog (~3.2k lines, 9 ports, 4 block</text>
+<text x="86" y="215" font-size="22" fill="#e8eefc">RAMs).</text>
+<circle cx="70" cy="253" r="4" fill="#34d399"/>
+<text x="86" y="261" font-size="22" fill="#e8eefc">recover.py is deterministic: records input SHA-256 + exact commands; asserts the circuit body is byte-</text>
+<text x="86" y="294" font-size="22" fill="#e8eefc">identical.</text>
+<circle cx="70" cy="332" r="4" fill="#e8eefc"/>
+<text x="86" y="340" font-size="22" fill="#e8eefc">Only edit: ANSI→non-ANSI scalar port headers so Icarus accepts the netlist. Memory primitives via</text>
+<text x="86" y="373" font-size="22" fill="#e8eefc">cells_sim.v.</text>
+<circle cx="70" cy="411" r="4" fill="#fbbf24"/>
+<text x="86" y="419" font-size="22" fill="#e8eefc">Open tools only: OSS CAD Suite — IceStorm, Yosys, Icarus Verilog — plus Python. No vendor tools.</text>
+<circle cx="70" cy="457" r="4" fill="#9fb0cc"/>
+<text x="86" y="465" font-size="22" fill="#e8eefc">Supplied vs independent: bitstream + datasheet + solution PDF are supplied; the netlist + analysis are</text>
+<text x="86" y="498" font-size="22" fill="#e8eefc">ours.</text>
+<text x="1224" y="692" font-size="15" text-anchor="end" fill="#9fb0cc">CSAW 2026 AI Hardware Attack Challenge — NYU Design Project</text>
+<text x="64" y="692" font-size="15" fill="#9fb0cc">3/8 · 1:05</text>
+</svg>

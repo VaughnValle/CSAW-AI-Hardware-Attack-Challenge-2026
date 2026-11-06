@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica,Arial,sans-serif">
+<rect width="1280" height="720" fill="#0f1724"/>
+<rect x="0" y="0" width="12" height="720" fill="#4f8cff"/>
+<text x="64" y="62" font-size="18" fill="#4f8cff" letter-spacing="2">WHAT IT DOES</text>
+<text x="64" y="112" font-size="40" font-weight="bold" fill="#e8eefc">Accelerator architecture &amp; ordinary transaction</text>
+<line x1="64" y1="134" x2="1224" y2="134" stroke="#2a3a5c" stroke-width="1.5"/>
+<circle cx="70" cy="174" r="4" fill="#4f8cff"/>
+<text x="86" y="182" font-size="22" fill="#e8eefc">32-bit, 4-round block cipher. Raw SPI peripheral +</text>
+<text x="86" y="215" font-size="22" fill="#e8eefc">sideband control (no AXI/Wishbone).</text>
+<circle cx="70" cy="253" r="4" fill="#e8eefc"/>
+<text x="86" y="261" font-size="22" fill="#e8eefc">Unified clock: SCK drives both the SPI shift register</text>
+<text x="86" y="294" font-size="22" fill="#e8eefc">and the crypto engine.</text>
+<circle cx="70" cy="332" r="4" fill="#e8eefc"/>
+<text x="86" y="340" font-size="22" fill="#e8eefc">Transaction: reset → shift 32 bits in (CS low) → pulse</text>
+<text x="86" y="373" font-size="22" fill="#e8eefc">START → wait → shift 32 bits out.</text>
+<circle cx="70" cy="411" r="4" fill="#34d399"/>
+<text x="86" y="419" font-size="22" fill="#e8eefc">BUSY high through edges 1-3, low from edge 4; result</text>
+<text x="86" y="452" font-size="22" fill="#e8eefc">loads on edge 5.</text>
+<circle cx="70" cy="490" r="4" fill="#9fb0cc"/>
+<text x="86" y="498" font-size="22" fill="#e8eefc">ENC_DEC: 0 = encrypt, 1 = decrypt. BUSY is mirrored on</text>
+<text x="86" y="531" font-size="22" fill="#e8eefc">ICE_LED.</text><rect x="704" y="196" width="512" height="300" rx="10" fill="#ffffff"/><g transform="translate(704.0,264.8) scale(0.5447)">
+<rect width="940" height="298" fill="#ffffff"/>
+<text x="150" y="34" font-size="20" font-weight="bold" fill="#1a1a2e">Ordinary transaction: BUSY falls at edge 4, result loads at edge 5</text>
+<line x1="188.5" y1="58" x2="188.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="265.5" y1="58" x2="265.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="342.5" y1="58" x2="342.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="419.5" y1="58" x2="419.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="496.5" y1="58" x2="496.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="573.5" y1="58" x2="573.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="650.5" y1="58" x2="650.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="727.5" y1="58" x2="727.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="804.5" y1="58" x2="804.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<line x1="881.5" y1="58" x2="881.5" y2="248" stroke="#e6e6ef" stroke-width="1"/>
+<text x="136" y="90" font-size="15" text-anchor="end" fill="#333">SCK</text>
+<line x1="150" y1="96" x2="920" y2="96" stroke="#f0f0f0" stroke-width="1"/>
+<path d="M 150.0 96.0 L 188.5 96.0 L 188.5 74.0 L 227.0 74.0 L 227.0 96.0 L 265.5 96.0 L 265.5 74.0 L 304.0 74.0 L 304.0 96.0 L 342.5 96.0 L 342.5 74.0 L 381.0 74.0 L 381.0 96.0 L 419.5 96.0 L 419.5 74.0 L 458.0 74.0 L 458.0 96.0 L 496.5 96.0 L 496.5 74.0 L 535.0 74.0 L 535.0 96.0 L 573.5 96.0 L 573.5 74.0 L 612.0 74.0 L 612.0 96.0 L 650.5 96.0 L 650.5 74.0 L 689.0 74.0 L 689.0 96.0 L 727.5 96.0 L 727.5 74.0 L 766.0 74.0 L 766.0 96.0 L 804.5 96.0 L 804.5 74.0 L 843.0 74.0 L 843.0 96.0 L 881.5 96.0 L 881.5 74.0 L 920.0 74.0 L 920.0 96.0 L 920.0 96.0" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<text x="136" y="136" font-size="15" text-anchor="end" fill="#333">NORM_CS_N</text>
+<line x1="150" y1="142" x2="920" y2="142" stroke="#f0f0f0" stroke-width="1"/>
+<path d="M 150.0 142.0 L 227.0 142.0 L 227.0 120.0 L 920.0 120.0" fill="none" stroke="#64748b" stroke-width="2.2"/>
+<text x="136" y="182" font-size="15" text-anchor="end" fill="#333">START</text>
+<line x1="150" y1="188" x2="920" y2="188" stroke="#f0f0f0" stroke-width="1"/>
+<path d="M 150.0 188.0 L 227.0 188.0 L 227.0 166.0 L 304.0 166.0 L 304.0 188.0 L 920.0 188.0" fill="none" stroke="#16a34a" stroke-width="2.2"/>
+<text x="136" y="228" font-size="15" text-anchor="end" fill="#333">BUSY (=ICE_LED)</text>
+<line x1="150" y1="234" x2="920" y2="234" stroke="#f0f0f0" stroke-width="1"/>
+<path d="M 150.0 234.0 L 227.0 234.0 L 227.0 212.0 L 496.5 212.0 L 496.5 234.0 L 920.0 234.0" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<line x1="150" y1="256" x2="920" y2="256" stroke="#888" stroke-width="1"/>
+<line x1="150.0" y1="256" x2="150.0" y2="261" stroke="#888"/>
+<text x="150.0" y="276" font-size="12" text-anchor="middle" fill="#666">34.0µs</text>
+<line x1="304.0" y1="256" x2="304.0" y2="261" stroke="#888"/>
+<text x="304.0" y="276" font-size="12" text-anchor="middle" fill="#666">36.0µs</text>
+<line x1="458.0" y1="256" x2="458.0" y2="261" stroke="#888"/>
+<text x="458.0" y="276" font-size="12" text-anchor="middle" fill="#666">38.0µs</text>
+<line x1="612.0" y1="256" x2="612.0" y2="261" stroke="#888"/>
+<text x="612.0" y="276" font-size="12" text-anchor="middle" fill="#666">40.0µs</text>
+<line x1="766.0" y1="256" x2="766.0" y2="261" stroke="#888"/>
+<text x="766.0" y="276" font-size="12" text-anchor="middle" fill="#666">42.0µs</text>
+<line x1="920.0" y1="256" x2="920.0" y2="261" stroke="#888"/>
+<text x="920.0" y="276" font-size="12" text-anchor="middle" fill="#666">44.0µs</text>
+</g>
+<text x="1224" y="692" font-size="15" text-anchor="end" fill="#9fb0cc">CSAW 2026 AI Hardware Attack Challenge — NYU Design Project</text>
+<text x="64" y="692" font-size="15" fill="#9fb0cc">2/8 · 1:00</text>
+</svg>

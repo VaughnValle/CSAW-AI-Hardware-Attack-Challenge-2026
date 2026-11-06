@@ -1,0 +1,33 @@
+# Speaker notes — CSAW 2026 Trojan talk (target ~7:40)
+
+## Slide 2 — Goal & progress (0:40)
+
+Our IP core is a small crypto accelerator delivered only as an FPGA bitstream. The project is a three-part arc: recover an inspectable circuit, prove we understand its normal behavior, then use AI to insert and demonstrate a hardware Trojan. As of tonight everything through the Trojan and its exploit is done and self-checking, with 127 baseline checks and 140 Trojan checks all passing, and a single script reproduces it. Tomorrow's requirement is the simulation story; the physical board is a bonus I'll only attempt once the slides and evidence are safe.
+
+## Slide 3 — Architecture & transaction (1:00)
+
+The core takes a 32-bit word over SPI, where the RP2040 is the controller and the FPGA is the peripheral. It deliberately avoids a heavy bus. The key architectural quirk is a unified clock domain: the same SCK that shifts SPI bits also clocks the cipher. A normal transaction loads 32 bits with chip-select low, pulses START, then reads 32 bits back. The waveform on the right is from our simulation: BUSY asserts with START, stays high for three clock edges, and drops at edge four — but note the result only becomes readable at edge five, which matters later.
+
+## Slide 4 — Recovery & tools (1:05)
+
+We start from only the .bin. iceunpack turns it into an ASCII config — that's how we learn it's the 5k device — and icebox_vlog lifts it to a structural Verilog netlist with nine ports and four block RAMs. Our recover.py is content-addressed: it hashes the input, logs every command, and asserts that the one cosmetic edit we make — converting ANSI scalar port headers so Icarus will compile it — leaves the circuit body byte-for-byte unchanged. Everything is open-source: IceStorm, Yosys, Icarus Verilog. Be clear about provenance: the bitstream, the datasheet, and the solution PDF with the key and round functions were supplied; the recovered netlist and all analysis are ours.
+
+## Slide 5 — Baseline & naming (1:00)
+
+Before touching anything, we prove we understand the normal core. I built an independent reference model of the two round functions from the solution PDF and ran 120 vectors — edge cases plus seeded random, both modes — against the recovered netlist. All pass, plus round-trip, reset, and back-to-back checks. This also settled an open question from the handoff: there is no mode-versus-name swap. Encrypt mode really is the PDF's encryption function; the earlier swap theory came from a software mis-transcription. And a concrete measured finding: the result isn't actually ready when BUSY drops at edge four — you need five edges. The host script's eight is safely conservative.
+
+## Slide 6 — AI usage & guardrails (1:00)
+
+The challenge is really about AI usage, so we log it. The AI received the recovered netlist, the datasheet, the supplied S-box, key and round equations, and the observed vectors. The process is generate-test-revise and it's recorded — the clearest example: my first reference model failed all four known vectors because the mode mapping was backwards; the test output drove the fix, and it then passed. Every line of RTL and every testbench is AI-generated; I review and run them. On guardrails, the honest answer is the interesting one: nothing refused this and I used no bypass. Given an authorized academic security context, the model generated the Trojan trigger and payload directly. The only safety-shaped behavior was self-imposed — keeping it tiny, labeling the malicious code, and reporting honestly that it's detectable rather than claiming it's invisible.
+
+## Slide 7 — Trojan & taxonomy (1:10)
+
+The Trojan is inserted at design time into readable RTL, so a two-file diff is the entire modification. The trigger is a sequential, input-controlled one: it only arms after three specific 32-bit words arrive in order, each as a completed transaction. Any wrong word resets progress, and a hardware reset dis-arms it — so it's rare and controllable. The payload is deliberately surgical: it inverts a single output bit on exactly one result, delivered through the existing SPI output path, so there are no new pins. In taxonomy terms: design-time RTL insertion, digital sequential trigger, functional-corruption integrity payload, existing channel, one-result scope. The cost is just a capture register and a two-bit counter.
+
+## Slide 8 — Evidence & limits (1:00)
+
+Here's the proof. On 120 ordinary transactions the Trojan core is bit-identical to the clean golden core — fully dormant. When the secret sequence completes, the output changes by exactly one bit: the waveform on the right shows the golden and Trojan serial outputs agreeing until the very last bit, which flips. Every near-miss case — wrong final word, wrong middle word, wrong order, reset in the middle — correctly suppresses the payload, and it re-arms and fires again cleanly. That's 140 checks, zero failures. Crucially I measured stealth instead of assuming it: synthesis shows the Trojan adds about three-and-a-half percent more cells, so an area diff or a known-answer test on the trigger word would catch it. Simulation is thorough but not a universal proof, and I record seeds and counts.
+
+## Slide 9 — Labor & next (0:45)
+
+Division of labor: I work solo, so I own the requirements, scope decisions, the board, and running, reviewing and accepting every piece of generated code — and giving this talk. The hardware itself is written by my AI collaborators: GPT-6.1 handled recovery and the first probe, and Claude Opus did the baseline hardening, the Trojan, the exploit, and these slides. Per the rules, all hardware and exploit code is AI-generated and I keep the full prompts, generated code, and test feedback in the repo. Next milestone is an optional on-board demonstration once I confirm the MicroPython side, and then the physical finals challenges. Everything — RTL, testbenches, AI logs, the technical brief, and this deck — goes to my GitHub fork.

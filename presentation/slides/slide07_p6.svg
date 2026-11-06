@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica,Arial,sans-serif">
+<rect width="1280" height="720" fill="#0f1724"/>
+<rect x="0" y="0" width="12" height="720" fill="#4f8cff"/>
+<text x="64" y="62" font-size="18" fill="#4f8cff" letter-spacing="2">THE TROJAN</text>
+<text x="64" y="112" font-size="40" font-weight="bold" fill="#e8eefc">Trigger, payload, insertion point &amp; taxonomy</text>
+<line x1="64" y1="134" x2="1224" y2="134" stroke="#2a3a5c" stroke-width="1.5"/>
+<circle cx="70" cy="174" r="4" fill="#4f8cff"/>
+<text x="86" y="182" font-size="22" fill="#e8eefc">Insertion: design-time, RTL source. Diff crypto_core_clean.v vs crypto_core_trojan.v = the whole change.</text>
+<circle cx="70" cy="220" r="4" fill="#f87171"/>
+<text x="86" y="228" font-size="22" fill="#e8eefc">Trigger: digital, input-controlled, SEQUENTIAL — rare ordered 3-word sequence 13375EED → C0DEFACE →</text>
+<text x="86" y="261" font-size="22" fill="#e8eefc">A5A5A5A5.</text>
+<circle cx="70" cy="299" r="4" fill="#e8eefc"/>
+<text x="86" y="307" font-size="22" fill="#e8eefc">Any wrong completed transaction resets progress; a word = SEQ0 restarts it; RST_N dis-arms.</text>
+<circle cx="70" cy="345" r="4" fill="#f87171"/>
+<text x="86" y="353" font-size="22" fill="#e8eefc">Payload: functional corruption, INTEGRITY — invert output bit 0 of exactly ONE result.</text>
+<circle cx="70" cy="391" r="4" fill="#9fb0cc"/>
+<text x="86" y="399" font-size="22" fill="#e8eefc">Channel: the EXISTING SPI output — no added ports. Added state: 32-bit input capture + 2-bit counter.</text>
+<text x="1224" y="692" font-size="15" text-anchor="end" fill="#9fb0cc">CSAW 2026 AI Hardware Attack Challenge — NYU Design Project</text>
+<text x="64" y="692" font-size="15" fill="#9fb0cc">6/8 · 1:10</text>
+</svg>
