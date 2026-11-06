@@ -251,8 +251,8 @@ def build():
         ("Solo project. Human: requirements, scope, board, running/reviewing/accepting all code, this talk.", C["blue"]),
         ("AI collaborators do the hardware code: GPT-6.1 (recovery + first probe), Claude Opus 4.8 (baseline, Trojan, exploit, slides).", C["text"]),
         ("All hardware/exploit code is AI-generated; full prompts, code, and test feedback are kept in ai/.", C["green"]),
-        ("Already demonstrated on the real Hackster board; next: the finals' physical challenges.", C["amber"]),
-        ("Deliverables on GitHub: RTL, testbenches, AI logs, technical brief, this deck + PDF.", C["muted"]),
+        ("Next step: power side-channel (CPA) to recover the key independently — board exposes ICE_PWR + ICE_TRIG.", C["amber"]),
+        ("Then the finals' physical challenges. Deliverables on GitHub: RTL, testbenches, AI logs, brief, deck + PDF.", C["muted"]),
     ], 64, 182, W-128)
     slides.append(("p8", frame(8, "WRAP-UP", "Solo responsibilities & next steps", b, "0:45")))
     SPK[8] = ("Division of labor: I work solo, so I own the requirements, scope decisions, the board, and running, reviewing and "
@@ -260,9 +260,11 @@ def build():
               "collaborators: GPT-6.1 handled recovery and the first probe, and Claude Opus did the baseline hardening, the Trojan, "
               "the exploit, and these slides. Per the rules, all hardware and exploit code is AI-generated and I keep the full "
               "prompts, generated code, and test feedback in the repo. We already took it onto the real board — confirmed AppMicro, "
-              "backed up and flashed the FPGA, reproduced the exploit on silicon, and restored the clean image — so the next "
-              "milestone is the finals' physical challenges. Everything — RTL, testbenches, AI logs, the technical brief, and this "
-              "deck — goes to my GitHub fork.")
+              "backed up and flashed the FPGA, reproduced the exploit on silicon, and restored the clean image. The clear next "
+              "step is a power side-channel attack — correlation power analysis on the first-round S-box output — to recover the "
+              "key independently from the chip rather than relying on the value the PDF supplied; the board already exposes a "
+              "power tap and a trigger connector for exactly that. After that come the finals' physical challenges. Everything — "
+              "RTL, testbenches, AI logs, the technical brief, and this deck — goes to my GitHub fork.")
 
     # write slide svgs
     paths = []

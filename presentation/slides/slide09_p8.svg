@@ -12,9 +12,10 @@
 <circle cx="70" cy="299" r="4" fill="#34d399"/>
 <text x="86" y="307" font-size="22" fill="#e8eefc">All hardware/exploit code is AI-generated; full prompts, code, and test feedback are kept in ai/.</text>
 <circle cx="70" cy="345" r="4" fill="#fbbf24"/>
-<text x="86" y="353" font-size="22" fill="#e8eefc">Already demonstrated on the real Hackster board; next: the finals&#x27; physical challenges.</text>
+<text x="86" y="353" font-size="22" fill="#e8eefc">Next step: power side-channel (CPA) to recover the key independently — board exposes ICE_PWR + ICE_TRIG.</text>
 <circle cx="70" cy="391" r="4" fill="#9fb0cc"/>
-<text x="86" y="399" font-size="22" fill="#e8eefc">Deliverables on GitHub: RTL, testbenches, AI logs, technical brief, this deck + PDF.</text>
+<text x="86" y="399" font-size="22" fill="#e8eefc">Then the finals&#x27; physical challenges. Deliverables on GitHub: RTL, testbenches, AI logs, brief, deck +</text>
+<text x="86" y="432" font-size="22" fill="#e8eefc">PDF.</text>
 <text x="1224" y="692" font-size="15" text-anchor="end" fill="#9fb0cc">CSAW 2026 AI Hardware Attack Challenge — NYU Design Project</text>
 <text x="64" y="692" font-size="15" fill="#9fb0cc">8/8 · 0:45</text>
 </svg>
